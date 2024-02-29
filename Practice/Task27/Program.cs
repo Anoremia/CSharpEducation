@@ -1,10 +1,12 @@
 ﻿namespace Task27
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Person Egor = new Person();
+            Egor.age = 10;
+            Console.WriteLine(Egor.CheckIsAdult());
         }
     }
 }
