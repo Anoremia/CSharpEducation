@@ -39,24 +39,52 @@ namespace Task5._1
                 }
             }
 
-            Student FindOldestStudent = students[0];
-            Student FindYoungestStudent = students[0];
-
-            foreach (Student student in students)
+            void FindOldestStudent()
             {
-                if (student.age > FindOldestStudent.age)
+                Student FindOldestStudent = students[0];
+                foreach (Student student in students)
                 {
-                    FindOldestStudent = student;
+                    if (student.age > FindOldestStudent.age)
+                    {
+                        FindOldestStudent = student;
+                    }
                 }
-
-                if (student.age < FindYoungestStudent.age)
-                {
-                    FindYoungestStudent = student;
-                }
+                Console.WriteLine("Самый старший студент: ");
             }
 
-            Console.WriteLine($"\nСамый молодой студент: {FindYoungestStudent.name} {FindYoungestStudent.surname}, Возраст: {FindYoungestStudent.age}");
-            Console.WriteLine($"Самый старший студент: {FindOldestStudent.name} {FindOldestStudent.surname}, Возраст: {FindOldestStudent.age}");
+            void FindYoungestStudent()
+            {
+                Student FindYoungestStudent = students[0];
+                foreach (Student student in students)
+                {
+                    if (student.age < FindYoungestStudent.age)
+                    {
+                        FindYoungestStudent = student;
+                    }
+
+                }
+                Console.WriteLine("Самый молодой студент: ");
+            }
+
+
+            //Student FindOldestStudent = students[0];
+            //Student FindYoungestStudent = students[0];
+
+            //foreach (Student student in students)
+            //{
+            //    if (student.age > FindOldestStudent.age)
+            //    {
+            //        FindOldestStudent = student;
+            //    }
+
+            //    if (student.age < FindYoungestStudent.age)
+            //    {
+            //        FindYoungestStudent = student;
+            //    }
+            //}
+
+            //Console.WriteLine($"\nСамый молодой студент: {FindYoungestStudent.name} {FindYoungestStudent.surname}, Возраст: {FindYoungestStudent.age}");
+            //Console.WriteLine($"Самый старший студент: {FindOldestStudent.name} {FindOldestStudent.surname}, Возраст: {FindOldestStudent.age}");
 
         }
     }
