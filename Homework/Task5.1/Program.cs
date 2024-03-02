@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,12 +39,30 @@ namespace Task5._1
                 }
             }
 
-            Student oldestStudent = students.OrderByDescending(s => s.age).First();
-            Student youngestStudent = students.OrderBy(s => s.age).First();
+            Student FindOldestStudent = students[0];
+            Student FindYoungestStudent = students[0];
 
-            Console.WriteLine($"\nСамый молодой студент: {youngestStudent.name} {youngestStudent.surname}, Возраст: {youngestStudent.age}");
-            Console.WriteLine($"Самый старший студент: {oldestStudent.name} {oldestStudent.surname}, Возраст: {oldestStudent.age}");
+            foreach (Student student in students)
+            {
+                if (student.age > FindOldestStudent.age)
+                {
+                    FindOldestStudent = student;
+                }
+
+                if (student.age < FindYoungestStudent.age)
+                {
+                    FindYoungestStudent = student;
+                }
+            }
+
+            Console.WriteLine($"\nСамый молодой студент: {FindYoungestStudent.name} {FindYoungestStudent.surname}, Возраст: {FindYoungestStudent.age}");
+            Console.WriteLine($"Самый старший студент: {FindOldestStudent.name} {FindOldestStudent.surname}, Возраст: {FindOldestStudent.age}");
+
         }
     }
 
+
+    
 }
+
+
