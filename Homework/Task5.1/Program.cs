@@ -11,8 +11,8 @@ namespace Task5._1
         static void Main(string[] args)
         {
             //Student student = new Student;
-            //student.name = "Егор";
-            //student.surname= "Егоров";
+            //student.name = "Оло";
+            //student.surname= "Ололошова";
             //student.age = 20;
             //student.university = "Университет Ололоша";
 
