@@ -14,6 +14,7 @@ namespace Task29
         public string autor;
         public int year;
         public string genre;
+
         public Book(string title, string autor, int year, string genre)
         {
             this.title = title; 
