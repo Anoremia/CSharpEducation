@@ -13,9 +13,20 @@ public static class BinarySearch
     /// <param name="array">Массив целочисленных чисел.</param>
     /// <param name="x">Искомый элемент.</param>
     /// <returns>Индекс <see cref="x"/> в массиве. Иначе <c>-1</c>, если элемент не найден.</returns>
-    public static int Search(int[] array, int x)
-    {
-        // Здесь нужно реализовать поиск.
+    public static int Search(int[] array, int x, int left, int right)
+    {   
+        if (left > right) 
+            return -1;
+
+        int middle = (right + left) / 2;
+        if (x == array[middle])
+            return middle;
+        else if (x < array[middle])
+            left = middle + 1;
+        else if (x < array[middle])
+            right = middle - 1;
+        Search(array, x, left, right);
         return -1;
+
     }
 }

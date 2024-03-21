@@ -20,7 +20,7 @@ public static class BubbleSort
             {
                 if (array[j] > array[j + 1])
                 {
-                    var temp = array[i + 1];
+                    var temp = array[j + 1];
                     array[j + 1] = array[j];
                     array[j] = temp;
                 }

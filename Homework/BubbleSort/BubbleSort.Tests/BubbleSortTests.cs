@@ -6,7 +6,7 @@ namespace BubbleSort.Tests;
 
 public class Tests
 {
-    private const int N = 1000;
+    private const int N = 10000;
     private int[] _array;
 
     [SetUp]
@@ -38,9 +38,9 @@ public class Tests
     [TestCase(TestName = "Сортировка массива, который уже отсорирован в другую сторону")]
     public void BubbleSort_ReversedArray_ShouldBeSorted()
     {
-        _array = Enumerable.Range(N, 0).ToArray();
+        _array = Enumerable.Range(0, N).Reverse().ToArray();
         BubbleSort.Sort(_array);
-        Assert.That(IsSorted(_array, false), Is.EqualTo(true));
+        Assert.That(IsSorted(_array, true), Is.EqualTo(true));
     }
     
     private bool IsSorted(int[] array, bool ascending)
