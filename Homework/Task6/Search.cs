@@ -8,24 +8,73 @@ namespace Task6
 {
     internal class Search
     {
-        
-        public static LinearSearch() 
-        {
-            return;
-            const LinearSearch = (numbersArray, targetNumber) => 
-            
+            public static int LinearSearch(int[] array, int target)
             {
-                for (let i = 0; i < numbersArray.length; i++)
+                for (int i = 0; i < array.Length; i++)
                 {
-                    if (numbersArray[i] == targetNumber)
+                    if (array[i] == target)
                     {
-                        return i // Элемент найден
+                        return i;
+                    }
+                }
+                return -1;
+            }
+
+            public static int BinarySearch(int[] array, int target)
+            {
+                int left = 0;
+                int right = array.Length - 1;
+
+                while (left <= right)
+                {
+                    int mid = left + (right - left) / 2;
+
+                    if (array[mid] == target)
+                    {
+                        return mid;
+                    }
+                    else if (array[mid] < target)
+                    {
+                        left = mid + 1;
+                    }
+                    else
+                    {
+                        right = mid - 1;
                     }
                 }
 
-                return -1; // Элемент не найден
+                return -1;
             }
 
-        }
+            public static int BinarySearch(string[] array, string target)
+            {
+                int left = 0;
+                int right = array.Length - 1;
+
+                while (left <= right)
+                {
+                    int mid = left + (right - left) / 2;
+                    int compareResult = string.Compare(array[mid], target, StringComparison.Ordinal);
+
+                    if (compareResult == 0)
+                    {
+                        return mid;
+                    }
+                    else if (compareResult < 0)
+                    {
+                        left = mid + 1;
+                    }
+                    else
+                    {
+                        right = mid - 1;
+                    }
+                }
+
+                return -1;
+            }
+        
     }
 }
+
+
+
