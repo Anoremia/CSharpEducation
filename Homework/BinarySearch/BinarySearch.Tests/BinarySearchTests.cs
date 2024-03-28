@@ -6,7 +6,7 @@ namespace BinarySearch.Tests
 {
     public class BinarySearchTests
     {
-        private const int N = 1_000_000_000;
+        private const int N = 10000;
         private int[] _sortedArray;
         private int[] _unsortedArray;
 
@@ -28,13 +28,13 @@ namespace BinarySearch.Tests
         [TestCase(N, ExpectedResult = -1, TestName = "Поиск элемента, которого нет в массиве.")]
         public int BinarySearch_SortedArray_FindX(int x)
         {
-            return BinarySearch.Search(_sortedArray, x);
+            return BinarySearch.Search(_sortedArray, x, 0, _sortedArray.Length - 1);
         }
 
         [TestCase(-1, ExpectedResult = -1, TestName = "Поиск элемента в неотсортированном массиве.")]
         public int BinarySearch_UnsortedArray_FindX(int x)
         {
-            return BinarySearch.Search(_unsortedArray, x);
+            return BinarySearch.Search(_unsortedArray, x, 0, _sortedArray.Length - 1);
         }
     }
 }

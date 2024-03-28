@@ -19,14 +19,17 @@ public static class BinarySearch
             return -1;
 
         int middle = (right + left) / 2;
-        if (x == array[middle])
-            return middle;
-        else if (x < array[middle])
-            left = middle + 1;
-        else if (x < array[middle])
-            right = middle - 1;
-        Search(array, x, left, right);
-        return -1;
 
+        if (x == array[middle])
+           return middle;
+
+        else if (x < array[middle])
+           return Search(array, x, left, middle - 1);
+             
+        else if (x > array[middle])
+           return Search(array, x, middle + 1, right);
+  
+        return -1;
     }
+    
 }
